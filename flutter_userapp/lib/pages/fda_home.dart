@@ -26,28 +26,35 @@ class FdaHome extends StatelessWidget {
                   print(
                       "ID : ${snapshot.data![index].id}, Name : ${snapshot.data![index].name}, PLC : ${snapshot.data![index].plcR0001}");
                   return Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Column(
-                            children: [
-                              Text("ID : ${snapshot.data![index].id}"),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text("Name : ${snapshot.data![index].name}"),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text("PLC : ${snapshot.data![index].plcR0001}"),
-                            ],
-                          ),
-                        ],
+                    child: InkWell(
+                      child: Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Column(
+                              children: [
+                                Text("ID : ${snapshot.data![index].id}"),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text("Name : ${snapshot.data![index].name}"),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text("PLC : ${snapshot.data![index].plcR0001}"),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
+                      onTap: () => {
+                        print("클릭됨 ${snapshot.data![index].fdaid}"),
+                        Get.to(FdaDetail(),
+                            arguments: snapshot.data![index].fdaid),
+                      },
                     ),
                   );
 

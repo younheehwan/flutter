@@ -1,5 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
 class Fda {
-  final String _id;
+  @JsonKey(name: '_id')
+  final String fdaid;
   final int id;
   final String name;
   final String group;
@@ -18,7 +21,7 @@ class Fda {
   final String r0044;
 
   Fda(
-      this._id,
+      this.fdaid,
       this.id,
       this.name,
       this.group,
@@ -37,7 +40,7 @@ class Fda {
       this.r0044);
 
   Fda.fromJson(Map<String, dynamic> json)
-      : _id = json["_id"],
+      : fdaid = json["_id"],
         id = json["id"],
         name = json["name"],
         group = json["group"],

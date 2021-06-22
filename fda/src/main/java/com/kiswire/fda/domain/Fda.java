@@ -18,7 +18,9 @@ import lombok.NoArgsConstructor;
 public class Fda {
 	@Id
 	private String _id; // 몽고에서 만들어지는 ObjectId
+	
 	private Long id;
+	
 	private String name; // fda001, fda002
 	private String group; // 1,2
 
